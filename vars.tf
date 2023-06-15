@@ -4,7 +4,7 @@ variable "environment" {
 
 variable "service_name" {
     type = string
-    default = "${{ values.shortname }}"
+    default = "${{ shortname }}"
 }
 
 variable "location" {

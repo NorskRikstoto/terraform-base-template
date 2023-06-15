@@ -1,1 +1,1 @@
-# ${{ values.name }}-terraform
+# ${{ name }}-terraform

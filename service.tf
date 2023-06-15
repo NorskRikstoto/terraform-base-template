@@ -36,7 +36,7 @@ resource "azuread_application" "azuread_application" {
 
 resource "azuread_service_principal" "service_principal" {
   application_id = azuread_application.azuread_application.application_id
-  tags           = ["${{ values.shortname }}"]
+  tags           = ["${{ shortname }}"]
 }
 
 resource "azuread_application_password" "app_password" {
@@ -69,13 +69,13 @@ resource "azurerm_key_vault_access_policy" "service_principal_keyvault_access_po
   ]
 
   secret_permissions = [
-    "Get", 
-    "Backup", 
-    "Delete", 
-    "List", 
-    "Purge", 
-    "Recover", 
-    "Restore", 
+    "Get",
+    "Backup",
+    "Delete",
+    "List",
+    "Purge",
+    "Recover",
+    "Restore",
     "Set"
   ]
 }
@@ -88,7 +88,7 @@ resource "azurerm_key_vault_access_policy" "terraform_user_keyvault_access_polic
   key_permissions = [
     "Get",
     "Create",
-    "Delete", 
+    "Delete",
     "GetRotationPolicy",
 		"SetRotationPolicy"
   ]
